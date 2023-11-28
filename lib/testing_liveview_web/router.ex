@@ -19,6 +19,7 @@ defmodule TestingLiveviewWeb.Router do
 
     get "/", PageController, :index
     live "/home", HomeLive.Index, :index
+    live "/posts", PostLive.Index, :index
   end
 
   # Other scopes may use custom stacks.

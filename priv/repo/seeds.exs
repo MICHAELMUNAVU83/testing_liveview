@@ -9,3 +9,23 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+# Insert a post
+
+alias TestingLiveview.Posts
+
+Posts.create_post(%{
+  title: "first",
+  description: "first post"
+})
+
+
+Posts.create_post(%{
+  title: "second",
+  description: "second post"
+})
+
+Posts.create_post(%{
+  title: "third",
+  description: "third post"
+})
