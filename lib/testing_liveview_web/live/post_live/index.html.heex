@@ -1,9 +1,6 @@
 <div>
-  <.form let={f} for={@changeset}  id="search-post-filter" phx_change="search">
-    <%= text_input(f, :search,
-      placeholder: "Search",
-     
-    ) %>
+  <.form let={f} for={@changeset} id="search-post-filter" phx_change="search">
+    <%= text_input(f, :search, placeholder: "Search") %>
   </.form>
   <h2>
     Posts
@@ -13,3 +10,18 @@
     <span><%= post.description %></span>
   <% end %>
 </div>
+
+<span><%= live_patch("New Post", to: Routes.post_index_path(@socket, :new)) %></span>
+
+<%= if @live_action in [:new] do %>
+  <.modal return_to={Routes.post_index_path(@socket, :index)}>
+    <.live_component
+      module={LiveviewTestWeb.PostLive.FormComponent}
+      id={@post.id || :new}
+      title={@page_title}
+      action={@live_action}
+      post={@post}
+      return_to={Routes.post_index_path(@socket, :index)}
+    />
+  </.modal>
+<% end %>

@@ -19,4 +19,19 @@ defmodule TestingLiveviewWeb.PostLive.Index do
 
     {:noreply, socket |> assign(:posts, posts)}
   end
+
+  def handle_params(params, _url, socket) do
+    {:noreply, apply_action(socket, socket.assigns.live_action, params)}
+  end
+
+  defp apply_action(socket, :index, _params) do
+    socket
+    |> assign(:page_title, "Index Post")
+  end
+
+  defp apply_action(socket, :new, _params) do
+    socket
+    |> assign(:page_title, "New Post")
+    |> assign(:post, %Post{})
+  end
 end
