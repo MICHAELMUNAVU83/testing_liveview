@@ -13,7 +13,7 @@ Testing Phoenix Live View .
 ## About The Project
 
 This is a simple project to test Phoenix Live View . This is a prerequisite for article I have on medium.
-[Testing Phoenix Live View](https://medium.com/@michaelmunavu83/uploading-images-in-phoenix-live-view-459b481a8385)
+[Testing Phoenix Live View](https://medium.com/@michaelmunavu83/testing-phoenix-live-view-7851ccca6e37)
 
 ## Screenshots
 
